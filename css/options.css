@@ -1,0 +1,113 @@
+body {
+	background: #F4F5FB;
+	font-size: 14px;
+	margin: 0;
+	height: 400px;
+}
+
+.notify {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 16px;
+	padding: 15px 25px;
+	border-radius: 5px 5px;
+	background: rgba(0, 219, 67, 0.89);
+	color: #ffffff;
+	opacity: 0;
+	white-space: nowrap;
+	pointer-events: none;
+	z-index: 9999;
+}
+
+.notify--show {
+	opacity: 1;
+	transition: all 0.3s ease-in-out;
+}
+
+.text {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	font-size: 18px;
+	color: #444444;
+	text-align: center;
+	transform: translate(-50%, -50%);
+}
+
+.dd-sttbtn {
+	width: 32px;
+	height: 32px;
+}
+
+.dd-sttbtn--placeholder {
+	visibility: visible;
+	opacity: 0.9;
+	background: rgba(0, 0, 0, 0.15);
+	cursor: pointer;
+}
+
+.options__item--ads {
+	position: absolute;
+	left: 50%;
+	top: 24px;
+	height: 32px;
+	line-height: 32px;
+	background: rgba(0, 0, 0, 0.15);
+	transform: translate(-50%, 0);
+	cursor: pointer;
+}
+
+[type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+	position: absolute;
+	left: -9999px;
+}
+
+[type="checkbox"]:not(:checked)+label, [type="checkbox"]:checked+label {
+	position: relative;
+	line-height: 32px;
+	display: block;
+	padding: 0 8px 0 32px;
+	cursor: pointer;
+}
+
+[type="checkbox"]:checked+label {
+	background-color: rgba(0, 0, 0, 0.8);
+	opacity: 0.9;
+	color: #ffffff;
+}
+
+[type="checkbox"]:not(:checked)+label:before, [type="checkbox"]:checked+label:before {
+	content: '';
+	position: absolute;
+	left: 8px;
+	top: 8px;
+	width: 16px;
+	height: 16px;
+	background: #fff;
+}
+
+[type="checkbox"]:not(:checked)+label:after, [type="checkbox"]:checked+label:after {
+	content: '';
+	position: absolute;
+	top: 10px;
+	left: 13px;
+	display: block;
+	width: 4px;
+	height: 8px;
+	border: solid #000;
+	border-width: 0 2px 2px 0;
+	transform: rotate(45deg);
+	transition: all .2s;
+}
+
+[type="checkbox"]:not(:checked)+label:after {
+	opacity: 0;
+	transform: scale(0) rotate(45deg);
+}
+
+[type="checkbox"]:checked+label:after {
+	opacity: 1;
+	transform: scale(1) rotate(45deg);
+}
